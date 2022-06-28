@@ -25,11 +25,11 @@
       local_python_overlay = import ./python-overlay.nix;
 
       lowRISC_python_overrides = pfinal: pprev: {
-        fusesoc = pprev.fusesoc.overrideAttrs (oldAttrs: {
+        fusesoc = pprev.fusesoc.overridePythonAttrs (oldAttrs: {
           version = "0.3.3.dev";
           src = lowrisc_fusesoc_src;
         });
-        edalize = pprev.edalize.overrideAttrs (oldAttrs: {
+        edalize = pprev.edalize.overridePythonAttrs (oldAttrs: {
           version = "0.3.3.dev";
           src = lowrisc_edalize_src;
         });
