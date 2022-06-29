@@ -25,45 +25,19 @@
 
   outputs = { self, nixpkgs, mach-nix, deps }:
     let
+      system = "x86_64-linux";
 
       python_overlay = final: prev: {
         python3 = prev.python3.override {
           packageOverrides = deps.overlay_python;
         };
       };
-
-      system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
         overlays = [ python_overlay deps.overlay_pkgs ];
       };
 
       pythonEnv = pkgs.python3.withPackages(ps: with ps; [ pip fusesoc edalize ]);
-
-      requirements_ibex = ''
-          ##IBEX##
-          fusesoc<0.4.3.dev
-          edalize<0.4.3.dev
-          pyyaml
-          Mako
-          junit-xml
-          hjson
-          mistletoe>=0.7.2
-          premailer<3.9.0
-      '';
-       requirements_riscvdv = ''
-          bitstring
-          sphinx
-          pallets-sphinx-themes
-          sphinxcontrib-log-cabinet
-          sphinx-issues
-          sphinx_rtd_theme
-          rst2pdf
-          flake8
-          pyvsc
-          tabulate
-          pandas
-      '';
 
       # pyenv = mach-nix.lib.x86_64-linux.mkPython {
       #   requirements = ''

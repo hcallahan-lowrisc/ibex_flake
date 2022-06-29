@@ -4,13 +4,13 @@
   inputs = {
 
     lowrisc_fusesoc_src = {
-#    url = "path:/home/harrycallahan/projects/fusesoc/";
-     url = "github:lowRISC/fusesoc?ref=ot-0.2";
+      url = "path:/home/harry/projects/fusesoc/";
+     # url = "github:lowRISC/fusesoc?ref=ot-0.2";
      flake = false;
     };
     lowrisc_edalize_src = {
-#    url = "path:/home/harrycallahan/projects/fusesoc/";
-     url = "github:lowRISC/edalize?ref=ot-0.2";
+      url = "path:/home/harry/projects/edalize/";
+     # url = "github:lowRISC/edalize?ref=ot-0.2";
      flake = false;
     };
   };
@@ -21,8 +21,6 @@
     lowrisc_edalize_src,
   }:
     let
-      local_overlay = import ./overlay.nix;
-      local_python_overlay = import ./python-overlay.nix;
 
       lowRISC_python_overrides = pfinal: pprev: {
         fusesoc = pprev.fusesoc.overridePythonAttrs (oldAttrs: {
@@ -37,9 +35,9 @@
 
     in
       {
-        overlay_pkgs = local_overlay;
+        overlay_pkgs = import ./overlay.nix;
         overlay_python = nixpkgs.lib.composeManyExtensions [
-          local_python_overlay
+          (import ./python-overlay.nix)
           lowRISC_python_overrides
         ];
       };

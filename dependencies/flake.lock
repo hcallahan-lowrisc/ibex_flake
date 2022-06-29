@@ -3,44 +3,36 @@
     "lowrisc_edalize_src": {
       "flake": false,
       "locked": {
-        "lastModified": 1649340101,
-        "narHash": "sha256-iIf7bUBE2SeS/TByUNL9wI1LswlHTmgHYGJltWXNUWE=",
-        "owner": "lowRISC",
-        "repo": "edalize",
-        "rev": "5ae2c3e1ca306e27d81ce5fcc769f62cb7ac42d0",
-        "type": "github"
+        "lastModified": 1656419554,
+        "narHash": "sha256-smN/J3NAuf/Ibn2QZUI1Y19inRlCOOg2j7qQjvkquhk=",
+        "path": "/home/harry/projects/edalize/",
+        "type": "path"
       },
       "original": {
-        "owner": "lowRISC",
-        "ref": "ot-0.2",
-        "repo": "edalize",
-        "type": "github"
+        "path": "/home/harry/projects/edalize/",
+        "type": "path"
       }
     },
     "lowrisc_fusesoc_src": {
       "flake": false,
       "locked": {
-        "lastModified": 1646915773,
-        "narHash": "sha256-HFrx6vjthNbhrIeV4vNW3YmmqBwqb6lX8lu0dcmQnQM=",
-        "owner": "lowRISC",
-        "repo": "fusesoc",
-        "rev": "c64ca392382b0c432c893d5ce4a93b77af213fdf",
-        "type": "github"
+        "lastModified": 1656421280,
+        "narHash": "sha256-mC81GInsFGfhbIjnVzN8K3HzSqyTsvIxRxf/2VVLvWs=",
+        "path": "/home/harry/projects/fusesoc/",
+        "type": "path"
       },
       "original": {
-        "owner": "lowRISC",
-        "ref": "ot-0.2",
-        "repo": "fusesoc",
-        "type": "github"
+        "path": "/home/harry/projects/fusesoc/",
+        "type": "path"
       }
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1653738054,
-        "narHash": "sha256-IaR8iLN4Ms3f5EjU1CJkXSc49ZzyS5qv03DtVAti6/s=",
+        "lastModified": 1656370902,
+        "narHash": "sha256-wSJNOh2ODfqHlfjGHjOWDHr3AERIN7bnjU5LYy+9Ob4=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "17b62c338f2a0862a58bb6951556beecd98ccda9",
+        "rev": "0c4852c7bc40747e734a84a0d234105a4d5c146f",
         "type": "github"
       },
       "original": {
