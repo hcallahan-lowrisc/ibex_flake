@@ -52,9 +52,10 @@
       # };
 
 
-      buildInputs = with pkgs;
-        [ verilator libelf srecord riscv-gcc-toolchain ] ++
-        [ pythonEnv ];
+      # buildInputs = with pkgs;
+      #   [ verilator libelf srecord riscv-gcc-toolchain ] ++
+      #   [ pythonEnv ];
+      buildInputs2 = [ pkgs.riscv-isa-sim ];
 
     in
       {
@@ -70,8 +71,7 @@
         devShell.x86_64-linux = pkgs.mkShell {
           name = "simple_system";
           version = "0.1.0";
-          src = ./.;
-          inherit buildInputs;
+          buildInputs = buildInputs2;
           # inputsFrom = buildInputs;
         };
       #   devShells.x86_64-linux.fusesoc = pkgs.mkShell {
